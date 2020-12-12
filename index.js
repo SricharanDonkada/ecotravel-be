@@ -3,6 +3,7 @@ const app = express();
 const cors = require('cors');
 const bodyparser = require('body-parser');
 const mongoose = require('mongoose');
+const authRoute = require('./routes/auth');
 
 app.use(cors());
 app.use(bodyparser.json());
@@ -17,6 +18,8 @@ mongoose.connect('mongodb+srv://ecotravel:ecotravel@cluster0.dgzky.mongodb.net/e
 app.get('/',(req,res)=>{
     res.end("yoo guys!!!");
 });
+
+app.use('/auth', authRoute);
 
 
 

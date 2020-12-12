@@ -23,4 +23,4 @@ app.use('/auth', authRoute);
 
 
 
-app.listen(3030,()=>{console.log('listening on port 3030')});
+app.listen(process.env.PORT || 3030,()=>{console.log('listening on port 3030')});

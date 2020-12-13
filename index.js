@@ -4,6 +4,7 @@ const cors = require('cors');
 const bodyparser = require('body-parser');
 const mongoose = require('mongoose');
 const authRoute = require('./routes/auth');
+const creditsRoute = require('./routes/credit');
 
 app.use(cors());
 app.use(bodyparser.json());
@@ -20,6 +21,8 @@ app.get('/',(req,res)=>{
 });
 
 app.use('/auth', authRoute);
+
+app.use('/credits',creditsRoute);
 
 
 

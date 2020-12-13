@@ -6,7 +6,8 @@ const userSchema = new Schema({
     phone:{type:String, required:true},
     password:String,
     isverified:{type: Boolean, default:true},
-    credits: {type:Number, default:0}
+    credits: {type:Number, default:0},
+    admin: {type:Boolean, default:false}
 });
 
 module.exports = mongoose.model('user', userSchema);

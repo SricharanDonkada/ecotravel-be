@@ -13,6 +13,7 @@ router.post('/signup',(req,res)=>{
             });
 
             newAccount.save().then((doc)=>{
+                delete doc['password'];
                 res.json({success: true, response:doc});
             }).catch((err)=>{
                 res.json({success:false, message:'Something went wrong, please try again'});
@@ -32,6 +33,7 @@ router.post('/signin',(req,res)=>{
         }
         else{
             if(doc.password == req.body.password){
+                delete doc['password'];
                 res.json({success:true, response: doc});
             }else{
                 res.json({success:false, message:'Incorrect password'});

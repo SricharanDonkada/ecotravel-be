@@ -55,6 +55,14 @@ router.get('/get-credits/:phone',(req,res)=>{
     })
 });
 
+router.get('/transactions/:phone',(req,res)=>{
+    transaction.find({phone:req.params.phone}).then((docs)=>{
+        res.json(docs);
+    }).catch((err)=>{
+        res.json([]);
+    })
+});
+
 
 
 module.exports = router;
